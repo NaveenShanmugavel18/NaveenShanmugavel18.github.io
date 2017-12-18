@@ -35,11 +35,13 @@ self.addEventListener('push', function(event) {
 
 self.addEventListener('notificationclick', function(event) {
   console.log(event.notification.link);
+  console.log(event.notification);
+  var notification = JSON.parse(event.notification);
   console.log('[Service Worker] Notification click Received.');
 
   event.notification.close();
   
-  var link = event.notification.link ? event.notification.link : 'https://www.creditmantri.com/';
+  var link = notification.link ? notification.link : 'https://www.creditmantri.com/';
   
   event.waitUntil(
     clients.openWindow(link)
