@@ -22,7 +22,7 @@ self.addEventListener('push', function(event) {
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
   console.log("Event ",event);
   console.log("Event data ",event.data);
-  console.log("Event data json ",event.data.json());
+  console.log(`event data json: "${event.data.json()}"`);
 
   const title = 'Push Codelab';
   const options = {
