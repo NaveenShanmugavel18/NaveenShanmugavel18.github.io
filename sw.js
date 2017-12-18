@@ -21,9 +21,11 @@ self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
 
+  jsonData = JSON.parse(event.data.text());
+  console.log(jsonData.message);
   const title = 'CreditMantri Test';
   const options = {
-    body: 'Message Received \n ' + event.data.text(),
+    // body: 'Message Received \n ' + event.data.text(),
     icon: 'images/icon.png',
     badge: 'images/badge.png'
   };
