@@ -34,13 +34,15 @@ self.addEventListener('push', function(event) {
 });
 
 self.addEventListener('notificationclick', function(event) {
-  console.log(event.notification.body);
+  console.log(event.notification.link);
   console.log('[Service Worker] Notification click Received.');
 
   event.notification.close();
-
+  
+  var link = event.notification.link ? event.notification.link : 'https://www.creditmantri.com/';
+  
   event.waitUntil(
-    clients.openWindow('https://www.creditmantri.com/')
+    clients.openWindow(link)
   );
 });
 
