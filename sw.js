@@ -19,11 +19,11 @@ function urlB64ToUint8Array(base64String) {
 
 self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
-  console.log(`[Service Worker] Push had this data: "${event.data.json()}"`);
+  console.log(`[Service Worker] Push had this data: "${event.data.message}"`);
 
   const title = 'CreditMantri Test';
   const options = {
-    body: 'Message Received \n ' + event.data.text().message,
+    body: 'Message Received \n ' + event.data.message,
     icon: 'images/icon.png',
     badge: 'images/badge.png'
   };
