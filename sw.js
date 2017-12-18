@@ -20,7 +20,7 @@ function urlB64ToUint8Array(base64String) {
 self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
-  
+
   var jsonData = JSON.parse(event.data.text());
   console.log(jsonData.message);
   const title = 'CreditMantri';
@@ -34,7 +34,7 @@ self.addEventListener('push', function(event) {
 });
 
 self.addEventListener('notificationclick', function(event) {
-  console.log(event.notification);
+  console.log(event.notification.body);
   console.log('[Service Worker] Notification click Received.');
 
   event.notification.close();
