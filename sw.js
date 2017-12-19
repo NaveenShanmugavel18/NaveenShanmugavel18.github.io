@@ -26,9 +26,9 @@ self.addEventListener('push', function(event) {
   const title = 'CreditMantri';
   const options = {
     body: jsonData.message,
-    icon: jsonData.image ? jsonData.image : 'images/icon.png',
+    icon: jsonData.icon ? jsonData.icon : 'images/icon.png',
     tag: jsonData.link ? jsonData.link : 'https://www.creditmantri.com/',
-    image: jsonData.badge ? jsonData.badge : 'images/icon.png'
+    image: jsonData.image ? jsonData.image : 'images/icon.png'
   };
 
   event.waitUntil(self.registration.showNotification(title, options));
