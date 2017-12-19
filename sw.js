@@ -28,7 +28,7 @@ self.addEventListener('push', function(event) {
     body: jsonData.message,
     icon: jsonData.icon ? jsonData.icon : 'images/icon.png',
     tag: jsonData.link ? jsonData.link : 'https://www.creditmantri.com/',
-    image: jsonData.image ? jsonData.image : 'images/icon.png'
+    image: jsonData.image ? jsonData.image : ''
   };
 
   event.waitUntil(self.registration.showNotification(title, options));
