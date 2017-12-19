@@ -35,18 +35,10 @@ self.addEventListener('push', function(event) {
 });
 
 self.addEventListener('notificationclick', function(event) {
-  console.log('display body');
-
-  console.log(event.notification);
-  console.log(event.notification.tag);
-  // console.log(event.notification);
-  // console.log(JSON.parse(event.notification.link));
-  var notification = JSON.stringify(event.notification);
+  var link = event.notification.tag;
   console.log('[Service Worker] Notification click Received.');
 
   event.notification.close();
-  
-  var link = notification.link;
   
   event.waitUntil(
     clients.openWindow(link)
