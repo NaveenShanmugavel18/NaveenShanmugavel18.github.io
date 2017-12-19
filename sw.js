@@ -35,9 +35,11 @@ self.addEventListener('push', function(event) {
 });
 
 self.addEventListener('notificationclick', function(event) {
-  console.log(JSON.parse(event.notification.link));
-  console.log(event.notification);
-  console.log(JSON.parse(event.notification.link));
+  console.log('display body');
+  console.log(event.notification.options.body);
+  console.log(event.notification.body);
+  // console.log(event.notification);
+  // console.log(JSON.parse(event.notification.link));
   var notification = JSON.stringify(event.notification);
   console.log('[Service Worker] Notification click Received.');
 
