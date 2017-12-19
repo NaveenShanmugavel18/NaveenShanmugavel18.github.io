@@ -27,6 +27,7 @@ self.addEventListener('push', function(event) {
   const options = {
     body: jsonData.message,
     icon: jsonData.image ? jsonData.image : 'images/icon.png',
+    link: jsonData.link ? jsonData.link : 'https://www.creditmantri.com/',
     badge: 'images/badge.png'
   };
 
@@ -41,7 +42,7 @@ self.addEventListener('notificationclick', function(event) {
 
   event.notification.close();
   
-  var link = notification.link ? notification.link : 'https://www.creditmantri.com/';
+  var link = notification.link;
   
   event.waitUntil(
     clients.openWindow(link)
