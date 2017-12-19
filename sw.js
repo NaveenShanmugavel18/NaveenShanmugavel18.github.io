@@ -36,7 +36,7 @@ self.addEventListener('push', function(event) {
 
 self.addEventListener('notificationclick', function(event) {
   console.log('display body');
-  console.log(JSON.parse(event.notification.body));
+  console.log(event.notification.body);
   console.log(event.notification.body);
   // console.log(event.notification);
   // console.log(JSON.parse(event.notification.link));
