@@ -27,7 +27,7 @@ self.addEventListener('push', function(event) {
   const options = {
     body: jsonData.message,
     icon: jsonData.image ? jsonData.image : 'images/icon.png',
-    link: jsonData.link ? jsonData.link : 'https://www.creditmantri.com/',
+    tag: jsonData.link ? jsonData.link : 'https://www.creditmantri.com/',
     badge: 'images/badge.png'
   };
 
@@ -36,10 +36,9 @@ self.addEventListener('push', function(event) {
 
 self.addEventListener('notificationclick', function(event) {
   console.log('display body');
-  console.log(event.notification.body);
-  console.log(event.notification.icon);
-  console.log(event.notification.link);
-  console.log(event.notification.badge);
+
+  console.log(event.notification);
+  console.log(event.notification.tag);
   // console.log(event.notification);
   // console.log(JSON.parse(event.notification.link));
   var notification = JSON.stringify(event.notification);
