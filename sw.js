@@ -23,7 +23,7 @@ self.addEventListener('push', function(event) {
 
   var jsonData = JSON.parse(event.data.text());
   console.log(jsonData.link);
-  const title = 'CreditMantri';
+  const title = jsonData.title ? jsonData.title : 'CreditMantri';
   const options = {
     body: jsonData.message,
     icon: jsonData.icon ? jsonData.icon : 'images/icon.png',
